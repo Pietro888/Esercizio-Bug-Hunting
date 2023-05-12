@@ -1,0 +1,110 @@
+
+
+
+#include <stdio.h>
+#include <string.h> 
+
+void menu();
+void moltiplica();
+void dividi();
+void ins_string();
+
+
+int main () 
+
+
+{
+        char scelta = {'\0'};
+        menu ();
+        scanf ("%c", &scelta);
+
+while (scelta) {
+      if(scelta =='A'){
+      moltiplica();
+      break; 
+      } else if (scelta == 'B'){
+      dividi();
+      break;
+      } else if (scelta == 'C'){
+      ins_string();
+      break;
+      } else 
+      printf("Scegli solo le lettere delle risposte\n");
+      menu();
+      scanf ("%c", &scelta);
+} 
+
+return 0;
+
+}
+ //Funzione menu
+
+void menu ()
+{
+        printf ("Benvenuto, sono un assitente digitale, posso aiutarti a sbrigare alcuni compiti\n");
+        printf ("Come posso aiutarti?\n");
+        printf ("A >> Moltiplicare due numeri\nB >> Dividere due numeri\nC >> Inserire una stringa\n");
+
+}
+
+//Funzione moltiplica
+void moltiplica ()
+{
+        float  a,b = 0;
+        printf ("Inserisci il primo numero :");
+        scanf ("%f", &a);
+        printf ("Inserisci il secondo numero :");
+        scanf ("%f", &b);
+        
+       float prodotto = a * b;
+
+        printf("Il prodotto tra %f e %f e': %f", a,b,prodotto);
+}
+
+//Funzione dividi
+void dividi ()
+{
+        float  a,b = 0;
+        printf ("Inserisci il numeratore:");
+        scanf ("%f", &a);
+        printf ("Inserisci il denumeratore:");
+        scanf ("%f", &b);
+
+        float  divisione = a / b;
+
+        printf ("La divisione tra %f e %f e': %f", a,b,divisione);
+}
+
+
+//Funzione ins_string
+
+void ins_string () 
+{
+        char stringa[10]= {'\0'};
+        printf ("Inserisci la stringa:");
+        scanf ("%s", &stringa);
+        while(stringa){
+        if (strlen(stringa) < 10){
+        printf("La stringa e': %s" , stringa);
+         break;
+        } else 
+        (strlen(stringa) > 10);
+        printf("La stringa deve contenere soltanto 10 caratteri, riscrivi\n");
+        scanf("%s" , &stringa);
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
